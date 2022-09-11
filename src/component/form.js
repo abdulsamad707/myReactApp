@@ -12,13 +12,18 @@ function MyForm() {
 }
   
 let newDate=CurrentDate.toDateString();
+   
+const MonthArray=['January' ,'February' ,'March' ,'April', 'May', 'June', 'July','August' ,'September', 'October', 'November', 'December'];
 let currentMonth= CurrentDate.getMonth();
-January February March 
-    return (
+let CurrentDates = CurrentDate.getDate();
+let currentYear= CurrentDate.getFullYear();
+
+currentMonth=MonthArray[currentMonth];
+return (
  
       <form  onSubmit={handleSubmit}>
-          {newDate}
-          {currentMonth}
+  
+  {CurrentDates}-{currentMonth}-{currentYear}<br/>
         <label>Enter your name:       </label>
  <input type="text"   value={name}
           onChange={(e) => setName(e.target.value)}/>
